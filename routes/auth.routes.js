@@ -1,4 +1,5 @@
 import Router from 'express';
+import passport from 'passport';
 
 const routes = Router();
 
@@ -10,8 +11,8 @@ routes.get('/logout', (req, res) => {
     res.send('logging out');
 });
 
-routes.get('/google', (req, res) => {
-    res.send('logging in with google');
-});
+routes.get('/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
 
 export default routes;
