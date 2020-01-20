@@ -1,8 +1,10 @@
 import express from 'express';
-import authRoutes from './routes/auth.routes';
 import dotenv from 'dotenv';
+import authRoutes from './routes/auth.routes';
+import passportSetup from './config/passport-setup';
 
 dotenv.config();
+
 const app = express();
 
 app.set('view engine', 'ejs');
